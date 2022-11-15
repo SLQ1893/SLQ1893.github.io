@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SLQ1893</title>
+  <link rel="icon" href="_media/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="SLQ1893's personal blog site.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <style>
+    /* 自定义加载动画 */
+    #app {
+      display: block;
+      width: 125px;
+      height: 125px;
+      position: relative;
+      transform-style: preserve-3d;
+      border-radius: 50%;
+      background: #fcc96b;
+      background: #fcc96b;
+      background: linear-gradient(180deg,
+          #fcc96b 0%,
+          #fcc96b 15%,
+          #f7ae01 15%,
+          #f7ae01 19%,
+          #fcc96b 19%,
+          #fcc96b 22%,
+          #f7ae01 22%,
+          #f7ae01 28%,
+          #fcc96b 28%,
+          #fcc96b 31%,
+          #fcc96b 33%,
+          #fcc96b 36%,
+          #f7ae01 36%,
+          #f7ae01 48%,
+          #fcc96b 48%,
+          #fcc96b 55%,
+          #f7ae01 55%,
+          #f7ae01 66%,
+          #fcc96b 66%,
+          #fcc96b 70%,
+          #f7ae01 70%,
+          #f7ae01 73%,
+          #fcc96b 73%,
+          #fcc96b 82%,
+          #f7ae01 82%,
+          #c7ba9d 86%,
+          #fcc96b 86%);
+      box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25),
+        inset 8px -4px 6px rgba(199, 128, 0, 0.5),
+        inset -8px 4px 8px rgba(255, 235, 199, 0.5), inset 20px -5px 12px #f7ae01,
+        0 0 100px #ffffff59;
+      transform: rotateZ(-15deg);
+    }
+
+    #app::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: 16px solid #e1a519;
+      border-top-width: 0;
+      border-radius: 50%;
+      box-shadow: 0 -2px 0 #c18620;
+      animation: rings1 0.8s infinite linear;
+    }
+
+    #app::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: 8px solid #d48b0c;
+      border-top-width: 0;
+      border-radius: 50%;
+      box-shadow: 0 -2px 0 #b99309;
+      animation: rings2 0.8s infinite linear;
+    }
+
+    @keyframes rings1 {
+      0% {
+        transform: rotateX(65deg) rotateZ(0deg) scale(1.75);
+      }
+
+      100% {
+        transform: rotateX(65deg) rotateZ(360deg) scale(1.75);
+      }
+    }
+
+    @keyframes rings2 {
+      0% {
+        transform: rotateX(65deg) rotateZ(0deg) scale(1.7);
+      }
+
+      100% {
+        transform: rotateX(65deg) rotateZ(360deg) scale(1.7);
+      }
+    }
+
+    /* 自定义 GitHub Corners 挂件 */
+    .github-corner:hover .octo-arm{
+      animation:octocat-wave 560ms ease-in-out
+    }
+    @keyframes octocat-wave{
+      0%,100%{
+        transform:rotate(0)
+      }
+      20%,60%{
+        transform:rotate(-25deg)
+      }
+      40%,80%{
+        transform:rotate(10deg)
+      }
+    }
+    @media (max-width:500px){
+      .github-corner:hover .octo-arm{
+        animation:none
+      }
+      .github-corner .octo-arm{
+        animation:octocat-wave 560ms ease-in-out
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- 自定义 GitHub Corners 挂件 -->
+  <a href="https://github.com/SLQ1893/" target="_blank" class="github-corner" aria-label="View source on GitHub">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#07bbed; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+      <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+  </a>
+  <script>
+    window.$docsify = {
+      // 文档标题
+      name: '<img src="/_images/favicon.ico" height="80px">',
+      // 仓库地址
+      // repo: 'https://github.com/SLQ1893/',
+      // 启用封面页
+      coverpage: true,
+      // 只在访问主页时加载封面
+      onlyCover: true,
+      // 点击文档标题后跳转的链接地址
+      nameLink: '/',
+      // 在找不到指定页面时加载_404.md
+      notFoundPage: true,
+      // 加载自定义导航栏
+      loadNavbar: true,
+      // 加载自定义侧边栏
+      loadSidebar: true,
+      // 切换页面后自动跳转到页面顶部
+      auto2top: true,
+      // 执行文档里的 script 标签里的脚本
+      executeScript: true,
+      // 小屏设备下合并导航栏到侧边栏
+      mergeNavbar: true,
+      // 最大支持渲染的标题层级
+      maxLevel: 4,
+      // 生成目录的最大层级
+      subMaxLevel: 2,
+
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '搜索',
+        placeholder: {
+          '/': '搜索'
+        },
+        noData: '找不到结果!',
+        noData: {
+          '/': '找不到结果!'
+        },
+        depth: 2,
+        hideOtherSidebarContent: false,
+        namespace: 'website-1',
+        pathNamespaces: ['/'],
+      },
+
+      copyCode: {
+        buttonText : '复制到剪贴板',
+        errorText  : '错误',
+        successText: '复制成功'
+      },
+
+      pagination: {
+        previousText: '上一章节',
+        nextText: '下一章节',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+
+      count:{
+        countable: true,
+        position: 'top',
+        margin: '5px',
+        float: 'right',
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese',
+        localization: {
+          words: "字",
+          minute: "分钟"
+        },
+        isExpected: true
+      },
+
+      plugins: [
+        function(hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+              '<a href="https://github.com/SLQ1893/" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by SLQ1893</a>',
+            '</footer>'
+          ].join('');
+
+          hook.afterEach(function(html) {
+            return html + footer;
+          });
+        }
+      ]
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- Docsify emoji plugin has been deprecated as of v4.13 -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-shell-session.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-etlua.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-regex.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-jq.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '21f8600b1f171ba97117',
+      clientSecret: '284b1fe4ce2d46b521049c6e7180a3dfdb939766',
+      repo: 'comments',
+      owner: 'SLQ1893',
+      admin: ['SLQ1893'],
+      distractionFreeMode: true
+    })
+  </script>
+</body>
+</html>
