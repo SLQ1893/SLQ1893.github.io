@@ -38,7 +38,7 @@ body {
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 6vmin;
+  top: 4vmin;
   width: 30vmin;
 }
 @media (max-width: 480px) and (min-width: 320px) {
