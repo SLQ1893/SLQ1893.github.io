@@ -8,5 +8,5 @@
 - 无需生成 html 文件
 - 众多主题
 
-[GitHub](https://github.com/SLQ1893/)
+[GitHub](https://github.com/SLQ1893/SLQ1893.github.io)
 [Get Started](/README)
