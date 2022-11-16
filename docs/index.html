@@ -273,19 +273,38 @@
 
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<!--<script>-->
+<!--    const gitalk = new Gitalk({-->
+<!--        clientID: '21f8600b1f171ba97117',-->
+<!--        clientSecret: '788b962e3f0ffb583610711d1a9087d579f62390',-->
+<!--        repo: 'comments',-->
+<!--        owner: 'SLQ1893',-->
+<!--        admin: ['SLQ1893'],-->
+<!--        distractionFreeMode: true,-->
+<!--        id: location.pathname,-->
+<!--        language: ['zh-CN'],-->
+<!--        title: '',-->
+<!--        enableHotKey: true,-->
+<!--    })-->
+<!--    // gitalk.render('app')-->
+<!--</script>-->
+
 <script>
-    const gitalk = new Gitalk({
+    let props = {
         clientID: '21f8600b1f171ba97117',
         clientSecret: '788b962e3f0ffb583610711d1a9087d579f62390',
         repo: 'comments',
         owner: 'SLQ1893',
         admin: ['SLQ1893'],
         distractionFreeMode: true,
-        id: location.pathname,
-        language: ['zh-CN'],
-        enableHotKey: true,
-    })
-    // gitalk.render('app')
+        id: decodeURI(location.hash.split('?')[0]),
+    };
+    let gitalk = new Gitalk(props);
+    window.addEventListener('hashchange', onHashChange);
+
+    function onHashChange() {
+        props.id = decodeURI(location.hash.split('?')[0]);
+    }
 </script>
 </body>
 </html>
