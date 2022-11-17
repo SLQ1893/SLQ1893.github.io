@@ -265,14 +265,71 @@ public class User {
 ## 核心功能
 
 ### 代码生成器（新）
+
+!> MyBatis-Plus代码生成器可以帮助我们完成编写entiry、mapper、service、impl、controller层代码的重复性工作，还可以自定义模板，实现单表增删改查、分页、多删等代码的生成，让程序员有更多的时间专注于实际业务。
+
 ?> <b>安装</b>
 ```maven
+<!--mybatis-plus-generator依赖-->
 <dependency>
     <groupId>com.baomidou</groupId>
     <artifactId>mybatis-plus-generator</artifactId>
     <version>最新版本</version>
 </dependency>
+
+<!--Velocity引擎模板依赖-->
+<dependency>
+	<groupId>org.apache.velocity</groupId>
+	<artifactId>velocity</artifactId>
+	<version>1.7</version>
+</dependency>
+
+<!--若开启 swagger 模式，还需导入如下依赖-->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+</dependency>
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
+</dependency>
 ```
+?> <b>快速生成</b>
+```java
+/**
+ * @author SLQ1893
+ * @create 2022-10-18 11:06
+ * @Description 代码生成器工具类
+ */
+public class CodeGenerator {
+    public static void main(String[] args) {
+        FastAutoGenerator.create("jdbc:mysql://localhost:3306/mybatis-plus?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatement=true", "root", "root")
+                .globalConfig(builder -> {
+                    builder.author("SLQ1893") // 设置作者
+                            .enableSwagger() // 开启 swagger 模式
+                            .fileOverride() // 覆盖已生成文件
+                            .outputDir("E:\\workspace\\IntelliJ_IDEA\\MyBatis-Plus\\src\\main\\java"); // 指定输出目录
+                })
+                .packageConfig(builder -> {
+                    builder.parent("com.slq.mybatisplus") // 设置父包名
+                            .moduleName(null) // 设置父包模块名
+                            .pathInfo(Collections.singletonMap(OutputFile.xml, "E:\\workspace\\IntelliJ_IDEA\\MyBatis-Plus\\src\\main\\resources\\mapper")); // 设置mapperXml生成路径
+                })
+                .strategyConfig(builder -> {
+                    builder.addInclude(Arrays.asList("t_student")) // 设置需要生成的表名
+                            .addTablePrefix("t_", "c_"); // 设置过滤表前缀
+                })
+                // 默认使用Velocity引擎模板，也可使用Freemarker引擎模板
+//                .templateEngine(new FreemarkerTemplateEngine())
+                .execute();
+    }
+}
+```
+复制以上代码到您的IDE中，修改相关配置就可以run了。我的项目目录结构如下：
+
+![](_images/codegenerator.png)
 
 
 ### CRUD接口
