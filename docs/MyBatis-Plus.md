@@ -6,7 +6,9 @@
 > 
 > 只做增强不做改变，为简化开发、提高效率而生
 
-!> 官网：[MyBatis-Plus](https://baomidou.com/)
+?> 官网：[MyBatis-Plus](https://baomidou.com/)
+
+!> 本文中的示例使用的是本文写作时MyBatis-Plus的最新版本，为 `3.5.2`。
 
 ## 快速入门
 
@@ -32,6 +34,7 @@
     <version>最新版本</version>
 </dependency>
 ```
+
 - Spring工程
 ```maven
 <dependency>
@@ -96,7 +99,6 @@ public class User {
 public class User {
     @TableId
     private Long id;
-    
     private String name;
     private Integer age;
     private String email;
@@ -108,11 +110,9 @@ public class User {
 | value | String | 否       | ""          | 主键字段名   |
 | type  | Enum   | 否       | IdType.NONE | 指定主键类型 |
 
-
 - `IdType`
 
 指定主键类型，是`TableId`注解`type`属性的值
-
 
 | 值            | 描述                                                         |
 | ------------- | ------------------------------------------------------------ |
@@ -137,11 +137,9 @@ public class User {
   <dependency>
       <groupId>com.baomidou</groupId>
       <artifactId>mybatis-plus-boot-starter-test</artifactId>
-      <version>{ mybatis-plus.version }</version>
+      <version>最新版本</version>
   </dependency>
   ```
-
-
 
 - 编写测试用例
 
@@ -162,7 +160,6 @@ public class User {
       }
   }
   ```
-
 
 
 ## 核心功能
