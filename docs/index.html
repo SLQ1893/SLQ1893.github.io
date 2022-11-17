@@ -223,7 +223,7 @@
 
         timeUpdater: {
             text: ">上次更新: {docsify-updated}",
-            formatUpdated: "{YYYY}/{MM}/{DD}, {HH}:{mm}:{ss}",
+            formatUpdated: "{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}",
             whereToPlace: "bottom",
         },
 
@@ -245,8 +245,6 @@
 </script>
 <script src="//cdn.jsdelivr.net/npm/docsify"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-<!-- Docsify emoji plugin has been deprecated as of v4.13 -->
-<!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script> -->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
@@ -279,11 +277,8 @@
         owner: 'SLQ1893',
         admin: ['SLQ1893'],
         distractionFreeMode: true,
-        id: location.pathname,
-        title: 'blogComment',
         enableHotKey: true,
     })
-    // gitalk.render('app')
 </script>
 </body>
 </html>
