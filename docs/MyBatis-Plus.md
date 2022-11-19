@@ -266,7 +266,7 @@ public class User {
 
 ### 代码生成器（新）
 
-!> MyBatis-Plus代码生成器可以帮助我们完成编写entiry、mapper、service、impl、controller层代码的重复性工作，还可以自定义模板，实现单表增删改查、分页、多删等代码的生成，让程序员有更多的时间专注于实际业务。
+!> MyBatis-Plus代码生成器可以帮助我们完成编写entiry、mapper、service、controller层代码的重复性工作，还可以自定义模板，实现单表增删改查、分页、多删等代码的生成，让程序员有更多的时间专注于业务逻辑。
 
 ?> <b>安装</b>
 ```maven
@@ -277,11 +277,18 @@ public class User {
     <version>最新版本</version>
 </dependency>
 
-<!--Velocity引擎模板依赖-->
+<!--默认使用Velocity引擎模板依赖-->
 <dependency>
 	<groupId>org.apache.velocity</groupId>
 	<artifactId>velocity</artifactId>
 	<version>1.7</version>
+</dependency>
+
+<!--freemarker模板引擎-->
+<dependency>
+    <groupId>org.freemarker</groupId>
+    <artifactId>freemarker</artifactId>
+    <version>2.3.31</version>
 </dependency>
 
 <!--若开启 swagger 模式，还需导入如下依赖-->
@@ -298,41 +305,78 @@ public class User {
 ```
 ?> <b>快速生成</b>
 ```java
+package com.slq.mybatisplus.utils;
+
+import com.baomidou.mybatisplus.generator.FastAutoGenerator;
+import com.baomidou.mybatisplus.generator.config.OutputFile;
+import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+
+import java.util.Arrays;
+import java.util.Collections;
+
 /**
  * @author SLQ1893
- * @create 2022-10-18 11:06
- * @Description 代码生成器工具类
+ * @create 2022-11-18 11:06
+ * @Description MyBatis-Plus代码生成器工具类
  */
 public class CodeGenerator {
     public static void main(String[] args) {
         FastAutoGenerator.create("jdbc:mysql://localhost:3306/mybatis-plus?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatement=true", "root", "root")
+                // 全局配置
                 .globalConfig(builder -> {
                     builder.author("SLQ1893") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
-                            .fileOverride() // 覆盖已生成文件
+                            .disableOpenDir() // 禁止打开输出目录
+                            .commentDate("yyyy-MM-dd HH:mm") // 注释日期
                             .outputDir("E:\\workspace\\IntelliJ_IDEA\\MyBatis-Plus\\src\\main\\java"); // 指定输出目录
                 })
+                // 包配置
                 .packageConfig(builder -> {
                     builder.parent("com.slq.mybatisplus") // 设置父包名
                             .moduleName(null) // 设置父包模块名
                             .pathInfo(Collections.singletonMap(OutputFile.xml, "E:\\workspace\\IntelliJ_IDEA\\MyBatis-Plus\\src\\main\\resources\\mapper")); // 设置mapperXml生成路径
                 })
+                // 策略配置
                 .strategyConfig(builder -> {
                     builder.addInclude(Arrays.asList("t_student")) // 设置需要生成的表名
                             .addTablePrefix("t_", "c_"); // 设置过滤表前缀
+                    // Entity策略配置
+                    builder.entityBuilder()
+                            .enableLombok() // 开启 lombok 模型
+                            .enableFileOverride() // 覆盖已有文件
+                            .enableTableFieldAnnotation(); // 开启生成实体时生成字段注解
+                    // Mapper策略配置
+                    builder.mapperBuilder()
+                            .enableFileOverride() // 覆盖已有文件
+                            .enableBaseResultMap() // 启用 BaseResultMap 生成
+                            .enableBaseColumnList(); // 启用 BaseColumnList
+                    // Service策略配置
+                    builder.serviceBuilder()
+                            .enableFileOverride() // 覆盖已有文件
+                            .formatServiceFileName("%sService"); // 格式化 service 接口文件名称
+                    // Controller策略配置
+                    builder.controllerBuilder()
+                            .enableFileOverride() // 覆盖已有文件
+                            .enableRestStyle(); // 开启生成@RestController 控制器
                 })
-                // 默认使用Velocity引擎模板，也可使用Freemarker引擎模板
-//                .templateEngine(new FreemarkerTemplateEngine())
+                // 使用Freemarker引擎模板，默认的是Velocity引擎模板
+                .templateEngine(new FreemarkerTemplateEngine())
                 .execute();
     }
 }
 ```
-复制以上代码到您的IDE中，修改相关配置就可以run了。我的项目目录结构如下：
+
+复制以上代码到您的IDE中，修改相关配置就可以run了。生成后，我的项目目录结构如下：
 
 ![](_images/codegenerator.png)
 
+更多配置信息可至官网查看：[代码生成器配置新 | MyBatis-Plus (baomidou.com)](https://baomidou.com/pages/981406/)
+
+
 
 ### CRUD接口
+
+
 
 
 ### 条件构造器
