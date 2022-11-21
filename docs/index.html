@@ -186,6 +186,10 @@
             subMaxLevel: 2,
             // Google Analytics
             ga: 'G-PB3VQDLG3C',
+            matomo: {
+                host: '//slq.matomo.cloud/',
+                id: 6,
+            },
 
             search: {
                 maxAge: 86400000,
@@ -292,12 +296,16 @@
         })
     </script>
     <script>
+        // Public site only
         if (/slq1893.github.io/.test(location.host)) {
-          document.write(
-            '<script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js"><\/script>'
-          );
+            document.write(
+                '<script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js"><\/script>'
+            );
+            document.write(
+                '<script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/matomo.min.js"><\/script>'
+            );
         }
-      </script>
+    </script>
 </body>
 
 </html>
