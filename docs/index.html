@@ -185,7 +185,7 @@
             // 生成目录的最大层级
             subMaxLevel: 2,
             // Google Analytics
-            // ga: 'G-PB3VQDLG3C',
+            ga: 'G-PB3VQDLG3C',
 
             search: {
                 maxAge: 86400000,
@@ -255,7 +255,6 @@
         }
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify"></script>
-    <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script> -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
@@ -292,15 +291,13 @@
             enableHotKey: true,
         })
     </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PB3VQDLG3C"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-PB3VQDLG3C');
-    </script>
+        if (/slq1893.github.io/.test(location.host)) {
+          document.write(
+            '<script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js"><\/script>'
+          );
+        }
+      </script>
 </body>
 
 </html>
