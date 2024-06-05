@@ -1,4 +1,4 @@
-<img src="./_images/icon.jpg" style="width: 180px; border-radius: 50%">
+<img src="./media/icon.jpg" style="width: 180px; border-radius: 50%">
 
 # SLQ1893
 
