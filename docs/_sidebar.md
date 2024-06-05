@@ -1,59 +1,9 @@
-- JavaSE
-
-  - [Quick start]()
-  - [Writing more pages]()
-
-- JavaWeb
-
-  - [Configuration]()
-  - [Themes]()
-
-- 数据库
-
-  - [MySQL](MySQL.md)
-  - [Oracle]()
-  - [SQL Server]()
-  - [MongoDB]()
-  - [Redis]()
-
-- 常用框架
-
-  - [Spring]()
-  - [SpringMVC]()
-  - [MyBatis]()
-  - [MyBatis-Plus](MyBatis-Plus.md)
-
-- JVM
-
-  - [Deploy]()
-  - [Helpers]()
-
-- SpringBoot
-
-  - [Deploy]()
-  - [Helpers]()
-
-- Linux
-
-  - [Deploy]()
-  - [Helpers]()
-
-- SpringCloud
-
-  - [Deploy]()
-  - [Helpers]()
-
-- Vue
-
-  - [Deploy]()
-  - [Helpers]()
-
-- 周边
-
-  - [Nginx](Nginx.md)
-  - [Docker](Docker.md)
-  - [Kubernetes]()
-  - [FastDFS]()
-  - [Elasticsearch]()
-
-- [面试题](面试题.md)
+- [Java核心技术](Java核心技术.md)
+- [后端技术-框架](后端技术-框架.md)
+- [数据库-NoSQL](数据库-NoSQL.md)
+- [架构-设计模式](架构-设计模式.md)
+- [消息队列](消息队列.md)
+- [应用服务器容器](应用服务器-容器.md)
+- [计算机](计算机.md)
+- [前端技术框架](前端技术-框架.md)
+- [更多面试题](更多面试题.md)
