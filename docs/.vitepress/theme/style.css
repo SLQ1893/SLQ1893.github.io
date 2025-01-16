@@ -1,0 +1,28 @@
+:root {
+    --vp-home-hero-name-background: -webkit-linear-gradient(#5EFCE8 10%, #736EFE 100%);
+    --vp-button-brand--bg: #ff986b;
+    --vp-button-brand-hover-bg: #ff986b;
+    /* --vp-font-family-base: ""; */
+    /* 其他文字字体 */
+    /*--vp-font-family-mono: "JetBrains Mono";*/
+    /* 代码块字体 */
+}
+
+.vp-doc .custom-block p {
+    font-size: 15px;
+}
+
+.custom-block.tip code {
+    background-color: #f3f3f3;
+    font-weight: 600;
+}
+
+.vp-doc .custom-block a {
+    color: var(--vp-c-brand);
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("./assets/JetBrainsMono-Light.woff2") format("woff2"), url("./assets/JetBrainsMono-Italic.ttf") format("ttf");
+    font-display: swap;
+}

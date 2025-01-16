@@ -1,0 +1,25 @@
+{
+    "homepage": "https://SLQ1893.github.io/",
+    "bugs": {
+        "url": "https://github.com/SLQ1893/SLQ1893.github.io/issues"
+    },
+    "repository": "github:SLQ1893/SLQ1893.github.io",
+    "license": "MIT",
+    "author": "SLQ1893",
+    "type": "module",
+    "scripts": {
+        "docs:dev": "vitepress dev",
+        "docs:build": "vitepress build",
+        "docs:preview": "vitepress preview"
+    },
+    "devDependencies": {
+        "vitepress": "^1.5.0"
+    },
+    "dependencies": {
+        "file-system": "^2.2.2",
+        "fs": "^0.0.1-security",
+        "markdown-it-anchor": "^9.2.0",
+        "path": "^0.12.7",
+        "vue": "^3.5.12"
+    }
+}
